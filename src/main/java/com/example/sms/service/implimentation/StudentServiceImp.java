@@ -41,8 +41,25 @@ public class StudentServiceImp implements StudentService {
 
 	@Override
 	public List<Student> getStudentList() {
-		
 		return studentRepository.findAll();
 	}
+
+	@Override
+	public Student saveStudent(Student student) {
+		
+		return studentRepository.save(student);
+	}
+
+	@Override
+	public Student findStudentById(Long id) {
+		// TODO Auto-generated method stub
+		return studentRepository.findById(id).get();
+	}
+
+	@Override
+	public void deleteStudent(Long id) {
+		studentRepository.deleteById(id);
+	}
+	
 
 }
